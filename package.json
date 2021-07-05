@@ -1,0 +1,17 @@
+{
+  "name": "books-server",
+  "version": "1.0.0",
+  "description": "books server with model controller and database",
+  "main": "index.js",
+  "author": "justice sowah",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
