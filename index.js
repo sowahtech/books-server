@@ -1,7 +1,12 @@
 //importing mongoose package
 const mongoose = require('mongoose');
 //importing controllers
-const {createBookController, viewBookController} = require('./controllers') 
+const {createBookController, 
+       viewBookController, 
+       updateBookController, 
+       deleteBookController, 
+       createAuthorController
+       } = require('./controllers') 
 //importing packages
 const express = require('express');
 
@@ -17,8 +22,9 @@ server.use(express.json());
 //create books route
 server.post('/book', createBookController);
 server.get('/book/:id?', viewBookController);
-// server.patch('/book', updateBookController);
-// server.delete('/book', deleteBookController);
+server.patch('/book', updateBookController);
+server.delete('/book', deleteBookController);
+server.post('/authors', createAuthorController);
 
 //connect to mongoDB database and starting server
 mongoose.connect('mongodb+srv://salis:salis01@cluster0.wu29m.mongodb.net/booksDB?retryWrites=true&w=majority', {useNewUrlParser: true, useUnifiedTopology: true})
